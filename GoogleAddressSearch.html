@@ -100,9 +100,9 @@
                 if (addressType == 'country')
                     window.parent.Xrm.Page.getAttribute(str_array[4]).setValue(place.address_components[i][componentForm[addressType]]);
                 if (addressType == 'postal_code')
-                    window.parent.Xrm.Page.getAttribute(str_array[5]).setValue(place.address_components[i][componentForm[addressType]]);
-                window.parent.Xrm.Page.getControl("msdyn_addressname").setFocus();                
+                    window.parent.Xrm.Page.getAttribute(str_array[5]).setValue(place.address_components[i][componentForm[addressType]]);                               
             }
+            window.parent.Xrm.Page.getAttribute("msdyn_addressname").setValue(place.formatted_address);
         }
 
         // Bias the autocomplete object to the user's geographical location,
